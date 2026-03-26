@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAuth, useSelectorHook } from "./hooks/Hooks";
-import { CounterAction } from "./store/store";
+import { CounterAction } from "./store/Store";
 import axios from "axios";
 import { NavLink, Outlet } from "react-router-dom";
 

@@ -5,7 +5,7 @@ import {
   useSelector,
   type TypedUseSelectorHook,
 } from "react-redux";
-import type { AppDispatch, RootState } from "../store/store";
+import type { AppDispatch, RootState } from "../store/Store";
 
 export const useAuth = () => {
   const AuthContext = useContext(Auth);
