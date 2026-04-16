@@ -1,6 +1,6 @@
-import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Users from "./components/Users";
+import "./App.css";
+import UsersTable from "./components/UsersTable";
 import CreateUser from "./components/createUser";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <>
       <div className="card">
         <Routes>
-          <Route path="/" element={<Navigate to={"/users"} replace />}></Route>
-          <Route path="users" element={<Users />}></Route>
+          <Route path="/" element={<Navigate to={'/usersTable'} replace />}></Route>
+          <Route path="usersTable" element={<UsersTable />}></Route>
           <Route path="createUser" element={<CreateUser />}></Route>
         </Routes>
       </div>

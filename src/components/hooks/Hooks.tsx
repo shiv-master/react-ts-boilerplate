@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { UserData } from "../context/UserData";
+import { useContext } from "react"
+import UsersData from "../context/UserContext"
 
 export const useUserData = () => {
-  const userContext = useContext(UserData);
-  if (!userContext) {
-    throw new Error("useUserData should be used inside Provider");
-  }
-  return userContext;
-};
+    const userDataCtx = useContext(UsersData)
+    if (!userDataCtx) {
+        throw new Error('useUserData should be used inside user provider.')
+    }
+    return userDataCtx
+}
