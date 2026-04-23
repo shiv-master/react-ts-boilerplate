@@ -1,24 +1,32 @@
-import { createContext } from "react"
+import { createContext, type Dispatch, type SetStateAction } from "react"
 
+/**
+ * User profile shape used by the user list and form.
+ */
 export interface User {
-    name: string,
-    email: string,
+    id: string
+    name: string
+    email: string
     address: {
         city: string
-    },
+    }
     company: {
         name: string
     }
 }
 
-interface Value {
-    users: User[],
-    setUsers: React.Dispatch<React.SetStateAction<User[]>>
+interface UserContextValue {
+    users: User[]
+    setUsers: Dispatch<SetStateAction<User[]>>
+    loading: boolean
+    error: string | null
 }
 
-const UsersData = createContext<Value>({
+const UsersData = createContext<UserContextValue>({
     users: [],
-    setUsers: () => { }
+    setUsers: () => { },
+    loading: false,
+    error: null
 })
 
 export default UsersData

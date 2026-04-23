@@ -1,22 +1,29 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import {
+  configureStore,
+  createSlice,
+  type PayloadAction,
+} from "@reduxjs/toolkit";
 
-interface State {
+/**
+ * Counter slice state for redux-managed counter actions.
+ */
+interface CounterState {
   count: number;
 }
 
-const initialState: State = {
+const initialState: CounterState = {
   count: 0,
 };
 
 const countSlice = createSlice({
   name: "counter",
-  initialState: initialState,
+  initialState,
   reducers: {
-    increase(state, action) {
-      state.count = state.count + action.payload;
+    increase(state, action: PayloadAction<number>) {
+      state.count += action.payload;
     },
-    decrease(state, action) {
-      state.count = state.count - action.payload;
+    decrease(state, action: PayloadAction<number>) {
+      state.count -= action.payload;
     },
   },
 });
