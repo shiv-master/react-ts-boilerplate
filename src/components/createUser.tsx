@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useUserData } from "./hooks/Hooks"
+import { useNavigate } from "react-router-dom"
 
 const CreateUser = () => {
     const { setUsers } = useUserData()
@@ -9,6 +10,7 @@ const CreateUser = () => {
         city: '',
         company: ''
     })
+    const navigate = useNavigate()
 
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData(formData => ({ ...formData, [e.target.name]: e.target.value }))
@@ -32,6 +34,7 @@ const CreateUser = () => {
             city: '',
             company: ''
         })
+        navigate('/usersTable')
     }
 
     return (
